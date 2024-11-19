@@ -8,6 +8,9 @@ export default defineNuxtConfig({
     baseURL: '/learn-from-zero/',
     buildAssetsDir: 'assets',
   },
+  devServer: {
+    port: 3002
+  },
   compatibilityDate: '2024-04-03',
   devtools: { enabled: true },
   modules: [
@@ -55,6 +58,7 @@ export default defineNuxtConfig({
     storageKey: 'nuxt-color-mode'
   },
   nitro: {
+    preset: 'netlify',
     prerender: {
       routes: ['/user/1', '/user/2'],
       ignore: ['/dynamic'],
