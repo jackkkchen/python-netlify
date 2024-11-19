@@ -58,6 +58,7 @@ export default defineNuxtConfig({
     storageKey: 'nuxt-color-mode'
   },
   nitro: {
+    preset: 'netlify',
     prerender: {
       routes: ['/user/1', '/user/2'],
       ignore: ['/dynamic'],
