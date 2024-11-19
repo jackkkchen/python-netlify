@@ -8,6 +8,9 @@ export default defineNuxtConfig({
     baseURL: '/learn-from-zero/',
     buildAssetsDir: 'assets',
   },
+  devServer: {
+    port: 3002
+  },
   compatibilityDate: '2024-04-03',
   devtools: { enabled: true },
   modules: [
