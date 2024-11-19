@@ -5,8 +5,8 @@ import rehypeKatex from 'rehype-katex'
 
 export default defineNuxtConfig({
   app: {
-    baseURL: '/learn-from-zero/',
-    buildAssetsDir: 'assets',
+    baseURL: '/',
+    buildAssetsDir: '_nuxt',
   },
   devServer: {
     port: 3002
@@ -45,6 +45,10 @@ export default defineNuxtConfig({
         light: 'github-light',
       }
     },
+    documentDriven: true,
+    navigation: {
+      fields: ['title', 'description']
+    }
   },
   colorMode: {
     preference: 'system',
@@ -60,9 +64,21 @@ export default defineNuxtConfig({
   nitro: {
     preset: 'netlify',
     prerender: {
-      routes: ['/user/1', '/user/2'],
-      ignore: ['/dynamic'],
+      routes: [
+        '/',
+        '/python-zero',
+        '/python-zero/1.preface',
+        '/python-zero/1.Preliminaries',
+        '/python-zero/2.1python_basic',
+        '/python-zero/2.2python_basic_II',
+        '/python-zero/cursor_tutorial'
+      ],
       crawlLinks: true
+    },
+    output: {
+      dir: '.output',
+      serverDir: '.output/server',
+      publicDir: '.output/public'
     }
   },
   ssr: false
