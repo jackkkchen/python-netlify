@@ -26,25 +26,28 @@ export default defineNuxtConfig({
     'katex/dist/katex.min.css'
   ],
   content: {
-    sources: {
-      content: {
-        driver: 'fs',
-        base: './content'
+    markdown: {
+      toc: { depth: 2, searchDepth: 2 },
+      remarkPlugins: {
+        'remark-math': {
+          singleDollar: true
+        }
+      },
+      rehypePlugins: {
+        'rehype-katex': {}
+      }
+    },
+    highlight: {
+      langs: ['py', 'js'],
+      theme: {
+        default: 'github-dark',
+        dark: 'github-dark',
+        light: 'github-light',
       }
     },
     documentDriven: true,
     navigation: {
-      fields: ['title', 'description', 'layout']
-    },
-    experimental: {
-      clientDB: true,
-      stripQueryParameters: false
-    },
-    markdown: {
-      anchorLinks: {
-        depth: 2,
-        exclude: [1]
-      }
+      fields: ['title', 'description']
     }
   },
   colorMode: {
@@ -65,12 +68,9 @@ export default defineNuxtConfig({
         '/',
         '/python-zero',
         '/python-zero/1.preface',
-        '/python-zero/1.preliminaries',
+        '/python-zero/1.Preliminaries',
         '/python-zero/2.1python_basic',
         '/python-zero/2.2python_basic_II',
-        '/python-zero/3.numpy',
-        '/python-zero/4.pandas',
-        '/python-zero/5.probability',
         '/python-zero/cursor_tutorial'
       ],
       crawlLinks: true
@@ -81,5 +81,5 @@ export default defineNuxtConfig({
       publicDir: '.output/public'
     }
   },
-  ssr: true
+  ssr: false
 })
