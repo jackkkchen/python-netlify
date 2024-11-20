@@ -11,9 +11,6 @@ export default defineNuxtConfig({
   devServer: {
     port: 3002
   },
-  devServer: {
-    port: 3002
-  },
   compatibilityDate: '2024-04-03',
   devtools: { enabled: true },
   modules: [
