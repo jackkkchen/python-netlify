@@ -15,7 +15,7 @@ export default defineNuxtConfig({
   devtools: { enabled: true },
   modules: [
     '@nuxt/content', 
-    '@nuxtjs/tailwindcss', 
+    '@nuxtjs/tailwindcss',    
     '@nuxtjs/color-mode', 
     '@pinia/nuxt'
   ],
